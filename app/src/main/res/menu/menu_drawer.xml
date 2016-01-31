@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group>
+        <item
+            android:id="@+id/nav_chat"
+            android:checkable="true"
+            android:icon="@mipmap/ic_navi_comment"
+            android:title="@string/nav_chat" />
+        <item
+            android:id="@+id/nav_feedback"
+            android:checkable="true"
+            android:icon="@mipmap/ic_navi_feedback"
+            android:title="@string/nav_feedback" />
+        <item
+            android:id="@+id/nav_about"
+            android:checkable="true"
+            android:icon="@mipmap/ic_navi_about"
+            android:title="@string/nav_about" />
+    </group>
+
+    <item
+        android:title="系统">
+        <menu>
+            <item
+                android:id="@+id/nav_setting"
+                android:checkable="true"
+                android:icon="@mipmap/ic_navi_setting"
+                android:title="@string/nav_setting" />
+        </menu>
+    </item>
+
+</menu>

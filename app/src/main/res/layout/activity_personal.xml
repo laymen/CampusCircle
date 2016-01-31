@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:navigationIcon="?attr/homeAsUpIndicator"
+        app:popupTheme="?attr/popupTheme"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <RelativeLayout
+        android:id="@+id/personal_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tool_bar"
+        android:background="@color/colorPrimary"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/personal_icon"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginRight="4dp"
+            android:scaleType="centerInside"
+            android:background="@mipmap/girl" />
+
+        <TextView
+            android:id="@+id/personl_name"
+            style="@android:style/TextAppearance.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/personal_icon"
+            android:layout_margin="4dip"
+            android:layout_toRightOf="@id/personal_icon"
+            android:text="清风拭泪"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/personl_signature"
+            style="@android:style/TextAppearance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/personl_name"
+            android:layout_margin="4dip"
+            android:layout_toRightOf="@id/personal_icon"
+            android:text="面朝大海，春暖花开"
+            android:textColor="#FFFFFF" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/personl_title"
+        style="@style/TextTheme.tipstheme_second"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/personal_info"
+        android:gravity="center"
+        android:padding="8dip"
+        android:text="发表过的" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/personl_title">
+        <include layout="@layout/main_content" />
+    </RelativeLayout>
+</RelativeLayout>

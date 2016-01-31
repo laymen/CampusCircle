@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:id="@+id/header_content"
+    >
+    <LinearLayout
+        android:id="@+id/bg_navi_header"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <View
+            android:id="@+id/one"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@color/colorPrimary"
+            />
+        <View
+            android:id="@+id/two"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@color/colorPrimary"
+            />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/user_logo_navi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@mipmap/girl"
+        android:scaleType="centerInside"
+        android:contentDescription="@null"
+        />
+    <TextView
+        android:id="@+id/user_name_navi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="25dp"
+        android:textSize="15sp"
+        android:textColor="#ffffff"
+        android:text="Mouse"
+        />
+
+    <TextView
+        android:id="@+id/user_signup_navi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/user_logo_navi"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:textSize="14sp"
+        android:textColor="#ffffff"
+        android:text="这个家伙很懒~什么也不说"
+        />
+
+</RelativeLayout>

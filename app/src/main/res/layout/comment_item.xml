@@ -1,0 +1,63 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginTop="5dp"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E4E4E4">
+
+        <ImageView
+            android:id="@+id/user_logo2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:scaleType="centerInside"
+            android:src="@mipmap/girl" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/user_logo2"
+            android:layout_alignTop="@id/user_logo2"
+            android:layout_toRightOf="@id/user_logo2">
+
+            <TextView
+                android:id="@+id/item_user_name"
+                style="@style/TextTheme"
+                android:layout_marginLeft="8dip"
+                android:text="岁月抚伤" />
+
+            <TextView
+                android:id="@+id/item_public_time2"
+                style="@style/TextTheme"
+                android:layout_below="@id/item_user_name"
+                android:layout_marginLeft="8dip"
+                android:text="12点"
+                android:textColor="#888888"
+                android:textSize="15dp" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/item_index_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/user_logo2"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@id/user_logo2"
+            android:layout_marginRight="8dp"
+            android:scaleType="centerInside"
+            android:text="1楼" />
+
+        <TextView
+            android:id="@+id/item_content_comment"
+            style="@style/TextTheme"
+            android:layout_below="@id/user_logo2"
+            android:layout_margin="4dp"
+            android:text="十年之前，我不认识你 你不属于我，我们还是一样，陪在一个陌生人左右，走过渐渐熟悉的街头;十年之后，我们是朋友， 还可以问候，只是那种温柔，再也找不到拥抱的理由，情人最后难免沦为朋友。" />
+    </RelativeLayout>
+</LinearLayout>

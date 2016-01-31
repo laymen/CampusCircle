@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="black">#000000</color>
+    <color name="second_color">#888888</color>
+    <color name="grey">#C1BFC4</color>
+    <color name="base_color_text_black">#3e3e39</color>
+    <color name="msg_emote_divider">#ffa1a1a1</color>
+    <color name="transparent">#00000000</color>
+    <color name="base_color_text_white">#ffffff</color>
+    <color name="dialog_color_title">#f82c22</color>
+</resources>

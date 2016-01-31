@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.bmob.mouse.yangtze">
+
+
+    <uses-permission android:name="android.permission.GET_TASKS" /><!-- SDK1.5需要android.permission.GET_TASKS权限判断本程序是否为当前运行的应用? -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" /><!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位-->
+    <uses-permission android:name="android.permission.INTERNET" /><!-- 允许应用打开网络套接口 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /><!-- 获取运营商信息，用于支持提供运营商信息相关的接口-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /><!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/><!-- 用于读取手机当前的状态-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_LOGS"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" /><!-- 允许程序显示系统窗口-->
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission> <!-- 这个权限用于进行网络定位-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission><!-- 这个权限用于访问GPS定位-->
+    <!-- Push SDK权限 -->
+    <permission
+        android:name="cn.bmob.permission.push"
+        android:protectionLevel="normal" >
+    </permission>
+    <uses-permission android:name="cn.bmob.permission.push" />
+    <application
+        android:name=".activity.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".activity.WelcomeActivity"
+            android:label="@string/app_name"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.BaseActivity"  android:screenOrientation="portrait" />
+        <activity android:name=".activity.ViewPageActivity"  android:screenOrientation="portrait"/>
+        <activity android:name=".activity.MainActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.RegisterALoginActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.EditActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.CommentActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.PersonalActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.MyFavActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.SettingActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.AboutActivity"   android:screenOrientation="portrait"/>
+        <activity android:name=".activity.EditSignActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.FeedBackActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.ChatActivity"  android:screenOrientation="portrait"/>
+        <activity android:name=".activity.RecentActivity" android:screenOrientation="portrait"/>
+
+
+
+        <!--  IM聊天所需的Push start -->
+        <service
+            android:name="cn.bmob.push.lib.service.PushService"
+            android:exported="true"
+            android:label="PushService"
+            android:permission="cn.bmob.permission.push"
+            android:process="cn.bmob.push" >
+            <intent-filter>
+                <action android:name="cn.bmob.push.lib.service.PushService" />
+            </intent-filter>
+        </service>
+
+        <receiver android:name="cn.bmob.push.PushReceiver" >
+            <intent-filter android:priority="2147483647" > <!-- 优先级加最高 -->
+                <!-- 系统启动完成后会调用 -->
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <!-- 解锁完成后会调用 -->
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <!-- 监听网络连通性 -->
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+        <!--聊天消息接收器 -->
+        <receiver android:name="com.bmob.mouse.yangtze.activity.MyMessageReceiver" >
+            <intent-filter>
+                <action android:name="cn.bmob.push.action.MESSAGE" />
+            </intent-filter>
+        </receiver>
+
+        <!-- IM聊天所需的Push end-->
+
+        <!-- 个性功能中的启动定时检测服务，可选功能 -->
+        <service android:name="cn.bmob.im.poll.BmobPollService">
+            <intent-filter>
+                <action android:name="cn.bmob.im.service.BmobPollService"/>
+            </intent-filter>
+        </service>
+
+
+        <!-- openqq -->
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="tencent1105034225" />
+            </intent-filter>
+        </activity>
+        <!-- MAT -->
+        <!-- 请将value改为MTA分配的appkey < -->
+        <meta-data
+            android:name="TA_APPKEY"
+            android:value="m6tEyF3NUUcbSDtZ" />
+        <!-- 请将value改为app发布对应的渠道，不同的发布渠道使用不同的名字 < -->
+        <meta-data
+            android:name="share"
+            android:value="QD_91" />
+        <!-- 注意：若填写的渠道为纯数字字符串类型，请不要超过int表示的范围！ < -->
+    </application>
+
+</manifest>

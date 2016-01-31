@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@mipmap/ic_guide_four">
+
+    <TextView
+        android:id="@+id/go"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:text="@string/go"
+        android:textSize="20sp"
+        android:clickable="true"
+        android:gravity="center"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
+        android:background="@drawable/sport_start_select"
+        android:textColor="#FFFFFF"/>
+</RelativeLayout>

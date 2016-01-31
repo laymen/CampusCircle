@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#FFFFFF" >
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:navigationIcon="?attr/homeAsUpIndicator"
+        app:popupTheme="?attr/popupTheme"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" >
+    </android.support.v7.widget.Toolbar>
+    <TextView
+        android:id="@+id/login_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tool_bar"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:background="@mipmap/bg_login_tab"
+        android:gravity="center"
+        android:padding="8dip"
+        android:text="登录"
+        android:textColor="@color/second_color"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/register_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/login_menu"
+        android:layout_toRightOf="@id/login_menu"
+        android:gravity="center"
+        android:padding="8dip"
+        android:text="注册"
+        android:textColor="@color/second_color"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/reset_password_menu"
+        style="@style/TextTheme.tipstheme_second"
+        android:layout_alignTop="@id/login_menu"
+        android:layout_toRightOf="@id/register_menu"
+        android:gravity="center"
+        android:padding="8dip"
+        android:text="找回密码" />
+
+    <View
+        android:id="@+id/diviver"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/register_menu"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@color/colorPrimary" />
+
+    <com.bmob.mouse.yangtze.view.DeletableEditText
+        android:id="@+id/user_name_input"
+        android:layout_width="wrap_content"
+        android:layout_height="48dip"
+        android:layout_alignLeft="@id/diviver"
+        android:layout_alignRight="@id/diviver"
+        android:layout_below="@id/diviver"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/selector_edittext_account"
+        android:drawableLeft="@mipmap/user_account"
+        android:drawableRight="@mipmap/user_delete"
+        android:ems="10"
+        android:hint="请输入帐号名"
+        android:paddingLeft="4dip"
+        android:paddingRight="4dip"
+        android:singleLine="true" >
+
+        <requestFocus />
+    </com.bmob.mouse.yangtze.view.DeletableEditText>
+
+    <com.bmob.mouse.yangtze.view.DeletableEditText
+        android:id="@+id/user_password_input"
+        android:layout_width="wrap_content"
+        android:layout_height="48dip"
+        android:layout_alignLeft="@id/user_name_input"
+        android:layout_alignRight="@id/user_name_input"
+        android:layout_below="@+id/user_name_input"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/selector_edittext_account"
+        android:drawableLeft="@mipmap/user_password"
+        android:drawableRight="@mipmap/user_delete"
+        android:ems="10"
+        android:hint="请输入密码"
+        android:inputType="textPassword"
+        android:paddingLeft="4dip"
+        android:paddingRight="4dip"
+        android:singleLine="true" />
+
+    <com.bmob.mouse.yangtze.view.DeletableEditText
+        android:id="@+id/user_email_input"
+        android:layout_width="wrap_content"
+        android:layout_height="48dip"
+        android:layout_alignLeft="@id/user_name_input"
+        android:layout_alignRight="@id/user_name_input"
+        android:layout_below="@+id/user_password_input"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/selector_edittext_account"
+        android:drawableLeft="@mipmap/user_name"
+        android:drawableRight="@mipmap/user_delete"
+        android:ems="10"
+        android:hint="请输入邮箱地址"
+        android:inputType="textEmailAddress"
+        android:paddingLeft="4dip"
+        android:paddingRight="4dip"
+        android:singleLine="true" />
+    <com.bmob.mouse.yangtze.view.DeletableEditText
+        android:id="@+id/user_school_input"
+        android:layout_width="wrap_content"
+        android:layout_height="48dip"
+        android:layout_alignLeft="@id/user_email_input"
+        android:layout_alignRight="@id/user_email_input"
+        android:layout_below="@+id/user_email_input"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/selector_edittext_account"
+        android:drawableLeft="@mipmap/user_school"
+        android:drawableRight="@mipmap/user_delete"
+        android:ems="10"
+        android:hint="请输入学校全称"
+        android:paddingLeft="4dip"
+        android:paddingRight="4dip"
+        android:singleLine="true" />
+
+    <Button
+        android:id="@+id/register"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignLeft="@+id/user_school_input"
+        android:layout_alignRight="@+id/user_school_input"
+        android:layout_below="@+id/user_school_input"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/selector_logout"
+        android:text="登录"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp" />
+
+
+
+</RelativeLayout>

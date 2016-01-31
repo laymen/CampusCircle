@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:ripple="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EEF2F3"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:navigationIcon="?attr/homeAsUpIndicator"
+        app:popupTheme="?attr/popupTheme"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <com.andexert.library.RippleView
+        android:id="@+id/ripple"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tool_bar"
+        android:layout_margin="5dp"
+        android:padding="10dp"
+        ripple:rv_centered="true"
+        ripple:rv_type="rectangle"
+        ripple:rv_zoom="true">
+
+        <TextView
+            android:id="@+id/user_icon_tips"
+            style="@style/TextTheme.tipstheme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="头像" />
+
+        <ImageView
+            android:id="@+id/user_icon_image"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@mipmap/girl"
+            android:scaleType="centerInside" />
+    </com.andexert.library.RippleView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@color/second_color" />
+
+    <com.andexert.library.RippleView
+        android:id="@+id/ripple2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ripple"
+        android:layout_margin="5dp"
+        android:padding="10dp"
+        ripple:rv_centered="true"
+        ripple:rv_type="rectangle"
+        ripple:rv_zoom="true">
+
+        <TextView
+            android:id="@+id/user_nick_tips"
+            style="@style/TextTheme.tipstheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="昵称"
+            android:textColor="@color/colorPrimary" />
+
+        <TextView
+            android:id="@+id/user_nick_text"
+            style="@style/TextTheme.tipstheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:paddingBottom="8dip"
+            android:paddingTop="8dip"
+            android:text="点击登录" />
+    </com.andexert.library.RippleView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@color/second_color" />
+
+    <RelativeLayout
+        android:id="@+id/sex_choice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:padding="10dp"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp">
+
+        <TextView
+            android:id="@+id/sex_choice_tips"
+            style="@style/TextTheme.tipstheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:paddingBottom="8dip"
+            android:paddingTop="8dip"
+            android:text="性别" />
+
+        <CheckBox
+            android:id="@+id/sex_choice_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:button="@drawable/selector_sex_choice"
+            android:checked="true"
+            android:scaleType="centerInside" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@color/second_color" />
+
+    <com.andexert.library.RippleView
+        android:id="@+id/ripple4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sex_choice_switch"
+        android:layout_margin="5dp"
+        android:padding="10dp"
+        ripple:rv_centered="true">
+
+        <TextView
+            android:id="@+id/user_sign_tips"
+            style="@style/TextTheme.tipstheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:paddingBottom="8dip"
+            android:paddingTop="8dip"
+            android:text="个性签名" />
+
+        <TextView
+            android:id="@+id/user_sign_text"
+            style="@style/TextTheme.tipstheme_second"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@id/user_sign_tips"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="100dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:paddingBottom="8dip"
+            android:paddingTop="8dip"
+            android:text="点击填写" />
+    </com.andexert.library.RippleView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@color/second_color" />
+
+    <com.andexert.library.RippleView
+        android:id="@+id/ripple5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ripple4"
+        android:layout_margin="5dp"
+        android:padding="10dp"
+        ripple:rv_centered="true"
+        ripple:rv_type="rectangle"
+        ripple:rv_zoom="true">
+
+        <TextView
+            android:id="@+id/settings_cache_tips"
+            style="@style/TextTheme.tipstheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp"
+            android:text="清除图片缓存" />
+
+    </com.andexert.library.RippleView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@color/second_color" />
+
+    <com.andexert.library.RippleView
+        android:id="@+id/ripple6"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@id/ripple5"
+        android:layout_margin="5dp"
+        android:padding="10dp"
+        ripple:rv_centered="true"
+        ripple:rv_type="rectangle"
+        ripple:rv_zoom="true">
+
+        <TextView
+            android:id="@+id/user_logout"
+            style="@style/TextTheme.tipstheme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ripple5"
+            android:background="@drawable/selector_logout"
+            android:gravity="center"
+            android:paddingBottom="12dip"
+            android:paddingTop="12dip"
+            android:text="退出登录"
+            android:textColor="#ffffff" />
+    </com.andexert.library.RippleView>
+
+</LinearLayout>

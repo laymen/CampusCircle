@@ -1,1 +1,1 @@
-![Screen show](https://github.com/laymen/master/Yangtze/GIF.gif)
+![Screen show](https://github.com/laymen/CampusCircle/blob/master/GIF.gif)

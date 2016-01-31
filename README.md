@@ -1,1 +1,1 @@
-![app show](https://github.com/laymen/CampusCircle/Yangtze/master/GIF.gif)
+![app show](https://github.com/laymen/CampusCircle/Yangtze/GIF.gif)

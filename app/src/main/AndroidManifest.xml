@@ -117,11 +117,11 @@
         <!-- 请将value改为MTA分配的appkey < -->
         <meta-data
             android:name="TA_APPKEY"
-            android:value="m6tEyF3NUUcbSDtZ" />
+            android:value="Aqc1105034225" />
         <!-- 请将value改为app发布对应的渠道，不同的发布渠道使用不同的名字 < -->
         <meta-data
-            android:name="share"
-            android:value="QD_91" />
+            android:name="InstallChannel"
+            android:value="Yangtze" />
         <!-- 注意：若填写的渠道为纯数字字符串类型，请不要超过int表示的范围！ < -->
     </application>
 

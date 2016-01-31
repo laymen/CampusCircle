@@ -14,12 +14,13 @@ import com.bmob.mouse.yangtze.util.ActivityTool;
 import com.bmob.mouse.yangtze.util.Constant;
 import com.bmob.mouse.yangtze.util.NetworkUtil;
 import com.tencent.connect.common.Constants;
+import com.tencent.connect.share.QQShare;
 import com.tencent.open.SocialConstants;
+import com.tencent.open.utils.HttpUtils;
 import com.tencent.tauth.IRequestListener;
 import com.tencent.tauth.IUiListener;
 import com.tencent.tauth.Tencent;
 import com.tencent.tauth.UiError;
-import com.tencent.utils.HttpUtils;
 
 import org.apache.http.conn.ConnectTimeoutException;
 import org.json.JSONException;
@@ -116,12 +117,12 @@ public class TencentShare implements TencentShareConstants {
     private void doShareToQQ(TencentShareEntity entity) {
         System.out.println(entity);
         Bundle params=new Bundle();
-        params.putString(SocialConstants.PARAM_TITLE, entity.getTitle());
-        params.putString(SocialConstants.PARAM_IMAGE_URL, entity.getImgUrl());
-        params.putString(SocialConstants.PARAM_TARGET_URL, entity.getTargetUrl());
-        params.putString(SocialConstants.PARAM_SUMMARY, entity.getSummary());
-        params.putString(SocialConstants.PARAM_COMMENT, entity.getComment());
-        params.putString(SocialConstants.PARAM_APPNAME, mContext.getResources().getString(R.string.app_name));
+        params.putInt(QQShare.SHARE_TO_QQ_KEY_TYPE, QQShare.SHARE_TO_QQ_TYPE_DEFAULT);
+        params.putString(QQShare.SHARE_TO_QQ_TITLE, entity.getTitle());
+        params.putString(QQShare.SHARE_TO_QQ_IMAGE_URL, entity.getImgUrl());
+        params.putString(QQShare.SHARE_TO_QQ_TARGET_URL, entity.getTargetUrl());
+        params.putString(QQShare.SHARE_TO_QQ_SUMMARY, entity.getSummary());
+        params.putString(QQShare.SHARE_TO_QQ_APP_NAME, mContext.getResources().getString(R.string.app_name));
         initTencent();
         tencent.shareToQQ(mContext, params, new BaseUiListener(0));
     }
@@ -333,33 +334,33 @@ public class TencentShare implements TencentShareConstants {
 
         @Override
         public void onIOException(final IOException e) {
-            Log.i("IRequestListener.onIOException:", e.getMessage());
+           // Log.i("IRequestListener.onIOException:", e.getMessage());
         }
 
         @Override
         public void onMalformedURLException(final MalformedURLException e) {
-        	Log.i("IRequestListener.onMalformedURLException", e.toString());
+        	//Log.i("IRequestListener.onMalformedURLException", e.toString());
         }
 
         @Override
         public void onJSONException(final JSONException e) {
-        	Log.i("IRequestListener.onJSONException:", e.getMessage());
+        //	Log.i("IRequestListener.onJSONException:", e.getMessage());
         }
 
         @Override
         public void onConnectTimeoutException(ConnectTimeoutException arg0) {
-        	Log.i("IRequestListener.onConnectTimeoutException:", arg0.getMessage());
+        	//Log.i("IRequestListener.onConnectTimeoutException:", arg0.getMessage());
 
         }
 
         @Override
         public void onSocketTimeoutException(SocketTimeoutException arg0) {
-        	Log.i("IRequestListener.SocketTimeoutException:", arg0.getMessage());
+        	//Log.i("IRequestListener.SocketTimeoutException:", arg0.getMessage());
         }
 
         @Override
         public void onUnknowException(Exception arg0) {
-        	Log.i("IRequestListener.onUnknowException:", arg0.getMessage());
+        //	Log.i("IRequestListener.onUnknowException:", arg0.getMessage());
         }
 
 		@Override

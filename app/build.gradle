@@ -43,4 +43,5 @@ dependencies {
     compile files('libs/YoumiSdk_v4.09_2014-06-16.jar')
     compile files('libs/open_sdk.jar')
     compile files('libs/BmobIM_V1.1.9beta_20150820.jar')
+    compile files('libs/open_sdk_r5509.jar')
 }

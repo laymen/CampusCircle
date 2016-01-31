@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -28,6 +29,7 @@ import com.bmob.mouse.yangtze.share.TencentShareEntity;
 import com.bmob.mouse.yangtze.util.ActivityTool;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListener;
+import com.tencent.connect.share.QQShare;
 
 import java.util.List;
 
@@ -221,19 +223,16 @@ public class MouseAdapter extends RecyclerView.Adapter<MouseAdapter.MyViewHolder
 
             }
         });
-
         //分享
         viewHolder.share.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-               // ActivityTool.show((Activity)mContext, "分享给好友看哦~");
                 final TencentShare tencentShare = new TencentShare(
                        MyApplication.getInstance().getTopActivity(),
                         getQQShareEntity(entity));
                 tencentShare.shareToQQ();
-
             }
         });
 
@@ -269,39 +268,12 @@ public class MouseAdapter extends RecyclerView.Adapter<MouseAdapter.MyViewHolder
 
             @Override
             public void onClick(View v) {
-                // TODO Auto-generated method stub
                 onClickFav(v, position);
 
             }
         });
 
     }
-
-//    public  void Addfav(Mouse tempMouse){
-//       // final  Mouse  tempMouse=dataList.get(position);
-//       // User userf=BmobUser.getCurrentUser(mContext,User.class);
-//        Log.i("Addfav",userf.getUsername()+"");
-//        Log.i("Addfav","userf"+"---"+userf.getObjectId()+"");//当前用户object
-//        Log.i("Addfav","mouse"+"---"+tempMouse.getObjectId()+"");//物品object
-//        Mouse mouse1=new Mouse();
-//        mouse1.setObjectId(tempMouse.getObjectId());
-//        BmobRelation rl=new BmobRelation();
-//        rl.add(userf);//将当前用户添加到多对多关联中
-//        mouse1.setLikes(rl);
-//        mouse1.update(mContext, new UpdateListener() {
-//            @Override
-//            public void onSuccess() {
-//                Log.i("life","多对多关联添加成功");
-//            }
-//
-//            @Override
-//            public void onFailure(int i, String s) {
-//                Log.i("life","多对多关联添加失败");
-//            }
-//        });
-//
-//
-//    }
 
     public void onClickFav(View v,final  int position) {
         User userf=BmobUser.getCurrentUser(mContext,User.class);
@@ -424,18 +396,18 @@ public class MouseAdapter extends RecyclerView.Adapter<MouseAdapter.MyViewHolder
         }
     }
 
-    private TencentShareEntity getQQShareEntity(Mouse qy) {
+    private TencentShareEntity getQQShareEntity(Mouse mouse) {
         String title = "这里好多美丽的风景";
         String comment = "来领略最美的风景吧";
         String img = null;
-        if (qy.getContentfigureurl() != null) {
-            img = qy.getContentfigureurl().getFileUrl(mContext);
+        if (mouse.getContentfigureurl() != null) {
+            img = mouse.getContentfigureurl().getFileUrl(mContext);
         } else {
             img = "http://file.bmob.cn/M02/42/58/oYYBAFaTLC6AWnfpAAA2F1XkGCM777.jpg";
         }
-        String summary = qy.getContent();
+        String summary = mouse.getContent();
 
-        String targetUrl = "http://www.baidu.com";
+        String targetUrl = "http://www.qq.com/news/1.html";
         TencentShareEntity entity = new TencentShareEntity(title, img,
                 targetUrl, summary, comment);
         return entity;

@@ -6,8 +6,10 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,6 +33,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListener;
 import com.tencent.connect.share.QQShare;
 
+import java.sql.Date;
 import java.util.List;
 
 import cn.bmob.v3.BmobUser;
@@ -228,9 +231,8 @@ public class MouseAdapter extends RecyclerView.Adapter<MouseAdapter.MyViewHolder
 
             @Override
             public void onClick(View v) {
-                // TODO Auto-generated method stub
                 final TencentShare tencentShare = new TencentShare(
-                       MyApplication.getInstance().getTopActivity(),
+                        MyApplication.getInstance().getTopActivity(),
                         getQQShareEntity(entity));
                 tencentShare.shareToQQ();
             }
@@ -364,6 +366,40 @@ public class MouseAdapter extends RecyclerView.Adapter<MouseAdapter.MyViewHolder
             return dataList.size();
         return 0;
     }
+
+//    AlertDialog shareDialog;
+//    private  void showShareDialog(final Mouse entity){
+//        shareDialog = new AlertDialog.Builder(mContext).create();
+//        shareDialog.setCanceledOnTouchOutside(true);
+//        View v = LayoutInflater.from(mContext).inflate(
+//                R.layout.dialog_share, null);
+//        shareDialog.show();
+//        shareDialog.setContentView(v);
+//        shareDialog.getWindow().setGravity(Gravity.CENTER);
+//        TextView QQ = (TextView) v.findViewById(R.id.QQ);
+//        TextView Zone = (TextView) v.findViewById(R.id.zone);
+//        final TencentShare tencentShare = new TencentShare(
+//                MyApplication.getInstance().getTopActivity(),
+//                getQQShareEntity(entity));
+//        QQ.setOnClickListener(new View.OnClickListener() {
+//
+//            @Override
+//            public void onClick(View arg0) {
+//                shareDialog.dismiss();
+//                tencentShare.shareToQQ();
+//
+//            }
+//        });
+//        Zone.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                shareDialog.dismiss();
+//                tencentShare.shareToQZone();
+//            }
+//        });
+//
+//
+//    }
 
     /**
      * MyViewHolder类，这个类的作用主要用于实例化控件

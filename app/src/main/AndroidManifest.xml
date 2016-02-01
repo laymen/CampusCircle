@@ -113,8 +113,7 @@
                 <data android:scheme="tencent1105034225" />
             </intent-filter>
         </activity>
-        <!-- MAT -->
-        <!-- 请将value改为MTA分配的appkey < -->
+        <!-- 请将value改为MTA分配的appkey-->
         <meta-data
             android:name="TA_APPKEY"
             android:value="Aqc1105034225" />
@@ -122,7 +121,6 @@
         <meta-data
             android:name="InstallChannel"
             android:value="Yangtze" />
-        <!-- 注意：若填写的渠道为纯数字字符串类型，请不要超过int表示的范围！ < -->
     </application>
 
 </manifest>

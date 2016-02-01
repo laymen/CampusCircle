@@ -1,20 +1,10 @@
 package com.bmob.mouse.yangtze.share;
 
-/**
- * @author kingofglory email: kingofglory@yeah.net blog: http:www.google.com
- * @date 2014-3-3 TODO
- */
-
 public class TencentShareEntity {
-
     private String title;
-
     private String imgUrl;
-
     private String targetUrl;
-
     private String summary;
-
     private String comment;
 
     /**
